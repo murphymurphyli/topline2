@@ -5,18 +5,16 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: Home
-    // },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    // }
+    {
+      name: 'home', // 给路由随便起个名字
+      path: '/',
+      // 在整个项目中，木块路径中的@表示的是src目录
+      // 加载一个目录默认加载它的index.vue,index.js
+      component: () => import('@/views/home')
+    }, {
+      name: 'login',
+      path: '/login',
+      component: () => import('@/views/login')
+    }
   ]
 })
